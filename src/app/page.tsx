@@ -4,10 +4,20 @@
 export default function Home() {
   return (
     <>
-      <div className="w-full h-screen bg-black flex justify-center items-center">
-        <h1 className="text-white text-2xl">Coming soon...</h1>
-        
-      </div>
+      <header>
+        <div className="container mx-auto px-5">
+          <header className="flex justify-between items-center mt-6 md:mt-4">
+          <h1 className="text-zinc-400">mehrabi.dev</h1>
+          
+            <button className="hover:bg-white hover:bg-opacity-10 md:px-3 md:py-2 rounded-md transition-all duration-200">
+              <span className="text-zinc-400 mr-2 text-md hidden md:inline-block">Command Menu</span>
+              <span className="text-white border-[0.7px] border-zinc-400 rounded-md inline-block w-6 h-6">⌘</span>
+              <span className="text-white border-[0.7px] border-zinc-400 rounded-md w-6 h-6 ml-1 hidden md:inline-block">K</span>
+            </button>
+          </header>
+
+        </div>
+      </header>
     </>
   )
 }
