@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    const handleKeyDown = (event: { metaKey: any; ctrlKey: any; key: string; }) => {
+    const handleKeyDown = (event: { metaKey: unknown; ctrlKey: unknown; key: string; }) => {
       if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
         openCommandMenu()
       }
