@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${sans.className} bg-black`}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }
