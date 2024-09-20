@@ -1,0 +1,66 @@
+---
+const {
+  title,
+  img,
+  desc,
+  url,
+  badge,
+  pricing,
+  oldPricing,
+  checkoutUrl,
+  details = true,
+  custom_link = false,
+  custom_link_label = "",
+} = Astro.props;
+import { Image } from "astro:assets";
+---
+
+<div class="rounded-lg bg-white shadow-md hover:shadow-lg transition-transform duration-200 hover:scale-105">
+  <a href={url} class="block">
+    <div class="flex flex-col md:flex-row items-center p-4">
+      {img && (
+        <Image
+          width={750}
+          height={422}
+          format="webp"
+          src={img}
+          alt={title}
+          class="w-full md:w-[13rem] rounded-lg object-cover"
+        />
+      )}
+      <div class="flex-grow md:ml-4 mt-4 md:mt-0">
+        <h1 class="text-xl font-semibold text-gray-900">
+          {title}
+          {badge && <span class="badge badge-secondary ml-2">{badge}</span>}
+        </h1>
+        <div class="flex items-center mt-1">
+          <span class="text-xl font-bold text-gray-900">{pricing}</span>
+          {oldPricing && (
+            <span class="text-md text-gray-500 line-through ml-2">{oldPricing}</span>
+          )}
+        </div>
+        <p class="py-2 text-gray-700">{desc}</p>
+        {details && (
+          <div class="flex justify-end mt-4">
+            {custom_link && (
+              <a
+                href={custom_link}
+                target="_blank"
+                class="text-blue-600 hover:underline mr-2"
+              >
+                {custom_link_label}
+              </a>
+            )}
+            <a
+              href={checkoutUrl}
+              target="_blank"
+              class="text-blue-600 hover:underline"
+            >
+              Buy Now
+            </a>
+          </div>
+        )}
+      </div>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,126 @@
+--- 
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout title="Resume" sideBarActiveItemID="cv">
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Profile</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+    I am Ahmad Mehrabi, a <b>Software Engineer</b> with over 3 years of experience in web development, UI design, backend integration, and DevOps. I have successfully led and contributed to over 3 projects, delivering scalable and efficient solutions that reduced defects by 40%, increased efficiency by 30%, and improved productivity by 60%. I specialize in modern web frameworks like React, Angular, and Next.js, while leveraging tools such as GitLab CI/CD and Jenkins for automation. I have a proven track record of enhancing business outcomes and user experiences through innovative software solutions.
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Education</div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="Bachelor of Software Engineering"
+      subtitle="July 2016 to August 2018 at Karoon University of Ahvaz, Ahvaz, Iran"
+    />
+    <TimeLineElement
+      title="Associate of Software Engineering"
+      subtitle="June 2012 to August 2016 at Shahid Chamran University of Ahvaz, Ahvaz, Iran"
+    />
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Experience</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Software Engineer at Demis Holding"
+      subtitle="From December 2021 to Present at Demis Holding, Isfahan, Iran"
+    >
+      • Orchestrated the transition from monolithic architecture to micro-frontends, improving scalability by 50% and reducing downtime by 30%.<br/>
+      • Automated CI/CD processes with GitLab CI, Jenkins, and Ansible, boosting productivity by 60% and reclaiming 40 hours weekly.<br/>
+      • Led a team of five developers, increasing delivery speed by 30% and reducing project completion time by 20%.<br/>
+      • Streamlined backend integration for 3 projects, reducing integration challenges by 35% and improving system reliability by 25%.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Software Engineer for Easymed"
+      subtitle="From March 2020 to November 2021 at Easymed, Remote"
+    >
+      • Engineered a SaaS platform for electronic healthcare services, enhancing patient satisfaction and healthcare service delivery through EHR and e-prescribing.<br/>
+      • Optimized operations management and revenue growth, cutting costs and accelerating service delivery for healthcare centers.<br/>
+      • Integrated with SePAS, enabling seamless inter-system communication across hospitals and clinics.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Software Engineer for Darmanmobile"
+      subtitle="From January 2019 to February 2020 at Iran Insurance Company, Tehran, Iran"
+    >
+      • Delivered an insurance platform for Iran Insurance Company, covering major national projects across the oil, gas, and aviation sectors.<br/>
+      • Implemented international reinsurance strategies, ensuring effective risk management for large-scale infrastructure projects.<br/>
+      • Enhanced the platform’s underwriting process, increasing operational efficiency by 25%.
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Certifications</div>
+  </div>
+
+  <ul class="list-disc mx-6 mb-10 grid gap-2">
+    <li>
+      <a href="#" target="_blank">JavaScript Code Challenges, LinkedIn (August 2023)</a>
+    </li>
+    <li>
+      <a href="#" target="_blank">React Design Patterns, LinkedIn (August 2023)</a>
+    </li>
+  </ul>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Skills</div>
+  </div>
+
+  <ul class="list-disc md:columns-5 columns-2 mx-6">
+    <li>JavaScript</li>
+    <li>TypeScript</li>
+    <li>React</li>
+    <li>Next.js</li>
+    <li>Angular</li>
+    <li>Rx.js</li>
+    <li>Micro Frontends</li>
+    <li>Webpack</li>
+    <li>TailwindCSS</li>
+    <li>CSS</li>
+    <li>Node.js</li>
+    <li>Java</li>
+    <li>Spring Boot</li>
+    <li>Jenkins</li>
+    <li>Docker</li>
+    <li>CI/CD</li>
+    <li>Express.js</li>
+    <li>NestJS</li>
+    <li>PL/SQL</li>
+    <li>Oracle Database</li>
+    <li>PostgreSQL</li>
+    <li>Socket.io</li>
+    <li>Storybook</li>
+    <li>SASS</li>
+    <li>Ionic Framework</li>
+    <li>React Native</li>
+    <li>Monorepos</li>
+    <li>Apollo GraphQL</li>
+    <li>Redux</li>
+    <li>NgRx</li>
+    <li>Bootstrap</li>
+    <li>REST APIs</li>
+    <li>Progressive Web Applications (PWAs)</li>
+    <li>Jest</li>
+    <li>HTML</li>
+    <li>Web Components</li>
+    <li>Responsive Web Design</li>
+    <li>Web Design</li>
+    <li>Material-UI</li>
+    <li>Vite</li>
+    <li>Zustand</li>
+    <li>Nginx</li>
+    <li>Git</li>
+    <li>Linux System Administration</li>
+</ul>
+
+</BaseLayout>

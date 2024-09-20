@@ -1,0 +1,38 @@
+---
+const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
+import { Image } from "astro:assets";
+const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
+---
+
+<div class="rounded-lg bg-white shadow-md hover:shadow-lg transition-transform duration-200 hover:scale-105">
+  <a href={url} target={target} class="block">
+    <div class="flex flex-col md:flex-row items-center p-4">
+      {img && (
+        <Image
+          src={img}
+          width={750}
+          height={422}
+          format="webp"
+          alt={title}
+          class="w-full md:w-[13rem] rounded-lg object-cover"
+        />
+      )}
+      <div class="flex-grow md:ml-4 mt-4 md:mt-0">
+        <h1 class="text-xl font-semibold text-gray-900">
+          {title}
+          {badge && (
+            <span class="badge badge-secondary ml-2">{badge}</span>
+          )}
+        </h1>
+        <p class="py-1 text-gray-700">{desc}</p>
+        <div class="flex flex-wrap mt-2">
+          {tags && tags.map((tag) => (
+            <a href={`${tag_url}/${tag}`} class="badge badge-outline mr-2 mb-2">
+              {tag}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,83 @@
+---
+import { type StoreSchema } from "../content/config";
+import BaseLayout from "./BaseLayout.astro";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+
+export interface Props extends StoreSchema {}
+
+const {
+  title,
+  description,
+  updatedDate,
+  heroImage,
+  pricing,
+  oldPricing,
+  checkoutUrl,
+  badge,
+  custom_link,
+  custom_link_label,
+} = Astro.props;
+
+dayjs.extend(localizedFormat);
+const displayDate = dayjs(updatedDate).format("ll");
+import { Image } from "astro:assets";
+---
+
+<BaseLayout title={title} description={description} image={heroImage}>
+  <main class="flex justify-center mt-10">
+    <article class="max-w-3xl w-full px-6 py-10 space-y-8">
+      {heroImage && (
+        <Image
+          width={750}
+          height={422}
+          format="webp"
+          src={heroImage}
+          alt={title}
+          class="rounded-lg w-full mb-6 shadow-md"
+        />
+      )}
+      <div class="space-y-4">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 flex items-center">
+          {title}
+          {badge && (
+            <div class="ml-3 inline-flex bg-indigo-600 text-white text-sm rounded-md px-3 py-1">
+              {badge}
+            </div>
+          )}
+        </h1>
+        <div class="flex items-center justify-between">
+          <div class="text-lg text-gray-900">
+            <span class="text-2xl font-semibold mr-2">{pricing}</span>
+            {oldPricing && <span class="text-gray-500 line-through">{oldPricing}</span>}
+          </div>
+          <div class="flex space-x-4">
+            {custom_link && (
+              <a
+                class="inline-block text-sm font-medium text-indigo-600 bg-indigo-50 hover:bg-indigo-100 rounded-md px-4 py-2"
+                href={custom_link}
+                target="_blank"
+              >
+                {custom_link_label}
+              </a>
+            )}
+            <a
+              class="inline-block text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-md px-4 py-2"
+              href={checkoutUrl}
+              target="_blank"
+            >
+              Buy Now
+            </a>
+          </div>
+        </div>
+      </div>
+      {updatedDate && (
+        <div class="text-sm text-gray-500">
+          Last updated on <time>{displayDate}</time>
+        </div>
+      )}
+      <hr class="border-t border-gray-200 my-6" />
+      <slot />
+    </article>
+  </main>
+</BaseLayout>
